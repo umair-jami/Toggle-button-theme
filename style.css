@@ -1,0 +1,44 @@
+/* we define css variables in the html root element */
+/* we can use variable inside variable */
+:root {
+  /* hex color */
+  --hue-color: 218;
+  --color-primary: hsl(var(--hue-color), 49%, 43%);
+  --color-primary-light: hsl(var(--hue-color), 49%, 50%);
+  --color-body: hsl(var(--hue-color), 49%, 95%);
+  --color-text: hsl(var(--hue-color), 20%, 20%);
+  /* rgb color */
+  /* --primary-color: rgb(200, 200, 200); */
+
+  /* hsl(hue saturation light) */
+}
+.dark-mode {
+  --color-primary: hsl(var(--hue-color), 49%, 60%);
+  --color-primary-light: hsl(var(--hue-color), 49%, 50%);
+  --color-body: hsl(var(--hue-color), 49%, 10%);
+  --color-text: hsl(var(--hue-color), 20%, 80%);
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-body);
+}
+h2 {
+  color: var(--color-primary);
+}
+p {
+  color: var(--color-text);
+}
+.toggle-theme {
+  border: none;
+  outline: none;
+  font-size: inherit;
+  padding: 1rem 1.5rem;
+  background: var(--color-primary);
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s background;
+}
+.toggle-theme:hover {
+  background-color: var(--color-primary-light);
+  color: black;
+}
